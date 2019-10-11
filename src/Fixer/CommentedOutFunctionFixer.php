@@ -58,7 +58,7 @@ var_dump($x);
 
     public function getPriority(): int
     {
-        // must be run before NoCommentedOutCodeFixer
+        // must be run before CommentSurroundedBySpacesFixer and NoCommentedOutCodeFixer
         return 1;
     }
 

@@ -4,6 +4,7 @@ declare(strict_types = 1);
 
 namespace Tests\Fixer;
 
+use PhpCsFixerCustomFixers\Fixer\CommentSurroundedBySpacesFixer;
 use PhpCsFixerCustomFixers\Fixer\NoCommentedOutCodeFixer;
 
 /**
@@ -16,6 +17,7 @@ final class CommentedOutFunctionFixerTest extends AbstractFixerTestCase
     public function testPriority(): void
     {
         static::assertGreaterThan((new NoCommentedOutCodeFixer())->getPriority(), $this->fixer->getPriority());
+        static::assertGreaterThan((new CommentSurroundedBySpacesFixer())->getPriority(), $this->fixer->getPriority());
     }
 
     public function testConfiguration(): void
