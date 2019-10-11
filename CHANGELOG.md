@@ -1,6 +1,7 @@
 # CHANGELOG for PHP CS Fixer: custom fixers
 
 ## [Unreleased]
+- Add CommentedOutFunctionFixer
 - Add PhpdocOnlyAllowedAnnotationsFixer
 
 ## v1.15.0 - *2019-08-19*

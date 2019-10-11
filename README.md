@@ -8,7 +8,7 @@
 
 [![Build status](https://img.shields.io/travis/kubawerlos/php-cs-fixer-custom-fixers/master.svg)](https://travis-ci.org/kubawerlos/php-cs-fixer-custom-fixers)
 [![Code coverage](https://img.shields.io/coveralls/github/kubawerlos/php-cs-fixer-custom-fixers/master.svg)](https://coveralls.io/github/kubawerlos/php-cs-fixer-custom-fixers?branch=master)
-![Tests](https://img.shields.io/badge/tests-1134-brightgreen.svg)
+![Tests](https://img.shields.io/badge/tests-1170-brightgreen.svg)
 [![Mutation testing badge](https://badge.stryker-mutator.io/github.com/kubawerlos/php-cs-fixer-custom-fixers/master)](https://stryker-mutator.github.io)
 [![Psalm type coverage](https://shepherd.dev/github/kubawerlos/php-cs-fixer-custom-fixers/coverage.svg)](https://shepherd.dev/github/kubawerlos/php-cs-fixer-custom-fixers)
 
@@ -43,6 +43,17 @@ Comment must be surrounded by spaces.
  <?php
 -/*foo*/
 +/* foo */
+```
+
+#### CommentedOutFunctionFixer
+Defined functions must be commented out.
+  *Risky: when any of the functions has side effects or is overridden.*
+Configuration options:
+- `functions` (`array`): list of functions to comment out; defaults to `['print_r', 'var_dump']`
+```diff
+ <?php
+-var_dump($x);
++/*var_dump($x);*/
 ```
 
 #### DataProviderNameFixer
