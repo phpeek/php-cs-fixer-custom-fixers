@@ -11,6 +11,7 @@ use PhpCsFixer\FixerDefinition\FixerDefinition;
 use PhpCsFixer\FixerDefinition\FixerDefinitionInterface;
 use PhpCsFixer\FixerDefinition\VersionSpecification;
 use PhpCsFixer\FixerDefinition\VersionSpecificCodeSample;
+use PhpCsFixer\Preg;
 use PhpCsFixer\Tokenizer\Token;
 use PhpCsFixer\Tokenizer\Tokens;
 
@@ -143,18 +144,19 @@ echo 1_000_000_000;
         return $content;
     }
 
-    private function addSeparatorsForSubstring(string $content, int $groupSize, int $startPosition, int $endPosition)
+    private function addSeparatorsForSubstring(string $content, int $groupSize, int $startPosition, int $endPosition): string
     {
         return \substr($content, 0, $startPosition)
             . $this->addSeparators(\substr($content, $startPosition, $endPosition - $startPosition), $groupSize)
             . \substr($content, $endPosition);
     }
 
-    private function addSeparators(string $content, int $groupSize)
+    private function addSeparators(string $content, int $groupSize): string
     {
         $content = $this->removeSeparators($content);
         $content = \strrev($content);
-        $content = \preg_replace(\sprintf('/[\da-fA-F]{%d}(?!$)/', $groupSize), '$0_', $content);
+        /** @var string $content */
+        $content = Preg::replace(\sprintf('/[\da-fA-F]{%d}(?!$)/', $groupSize), '$0_', $content);
 
         return \strrev($content);
     }

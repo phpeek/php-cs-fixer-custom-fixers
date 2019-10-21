@@ -140,6 +140,7 @@ return PhpCsFixer\Config::create()
                     'deprecated',
                     'internal',
                     'param',
+                    'requires',
                     'return',
                     'var',
                 ]];
