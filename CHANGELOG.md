@@ -1,6 +1,7 @@
 # CHANGELOG for PHP CS Fixer: custom fixers
 
 ## [Unreleased]
+- Add NumericLiteralSeparatorFixer
 - Add PhpdocOnlyAllowedAnnotationsFixer
 - Feature: OperatorLinebreakFixer - handle object operators
 

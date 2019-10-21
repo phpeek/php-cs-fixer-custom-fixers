@@ -15,6 +15,9 @@ use Symfony\Component\Console\Tester\CommandTester;
  */
 final class ReadmeCommandTest extends TestCase
 {
+    /**
+     * @requires PHP 7.4
+     */
     public function testReadmeIsUpToDate(): void
     {
         $tester = new CommandTester(new ReadmeCommand());

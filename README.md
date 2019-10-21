@@ -8,7 +8,7 @@
 
 [![Build status](https://img.shields.io/travis/kubawerlos/php-cs-fixer-custom-fixers/master.svg)](https://travis-ci.org/kubawerlos/php-cs-fixer-custom-fixers)
 [![Code coverage](https://img.shields.io/coveralls/github/kubawerlos/php-cs-fixer-custom-fixers/master.svg)](https://coveralls.io/github/kubawerlos/php-cs-fixer-custom-fixers?branch=master)
-![Tests](https://img.shields.io/badge/tests-1348-brightgreen.svg)
+![Tests](https://img.shields.io/badge/tests-1374-brightgreen.svg)
 [![Mutation testing badge](https://badge.stryker-mutator.io/github.com/kubawerlos/php-cs-fixer-custom-fixers/master)](https://stryker-mutator.github.io)
 [![Psalm type coverage](https://shepherd.dev/github/kubawerlos/php-cs-fixer-custom-fixers/coverage.svg)](https://shepherd.dev/github/kubawerlos/php-cs-fixer-custom-fixers)
 
@@ -294,6 +294,19 @@ Configuration options:
 -function foo(int $x = null) {
 +function foo(?int $x = null) {
  }
+```
+
+#### NumericLiteralSeparatorFixer
+Nullable parameters must be written in the consistent style.
+Configuration options:
+- `integer` (`bool`, `null`): whether add or remove thousands separator.; defaults to `false`
+- `double` (`bool`, `null`): whether add or remove thousands separator.; defaults to `false`
+- `binary ` (`bool`, `null`): whether add or remove separator.; defaults to `false`
+- `hex` (`bool`, `null`): whether add or remove separator.; defaults to `false`
+```diff
+ <?php
+-echo 1_000_000_000;
++echo 1000000000;
 ```
 
 #### OperatorLinebreakFixer
